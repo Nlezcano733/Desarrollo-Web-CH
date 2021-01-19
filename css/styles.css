@@ -1,0 +1,1183 @@
+/*----- FUENTES --------*/
+@font-face {
+  font-family: righteous;
+  src: url(../Fuentes/Righteous/Righteous-Regular.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+/* COMPONENTE */
+.articulo, .propositos .tarjetas, .nosotros, .noticias__article, .foro, #suscripcion, .revistaNumero, .principal {
+  background-color: #f6f6f6;
+  box-shadow: 0px 0px 10px #dddddd;
+}
+
+/* ------ CABECERA ------ */
+.contenedor {
+  position: fixed;
+  top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to top, #7ca1c6, #547aa0);
+  z-index: 1;
+}
+.contenedor .titulo {
+  font-size: 38px;
+  line-height: 50px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.contenedor .titulo a {
+  color: #c5dee0;
+  font-family: righteous;
+  text-decoration: none;
+}
+.contenedor .titulo a span {
+  font-family: righteous;
+  color: #345475;
+}
+
+/* ----- */
+.intro {
+  height: calc(100vh - 50px);
+  margin-top: 50px;
+  padding: 30px;
+  background-image: url(../Imagenes/LibroBlanco.jpg);
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: right;
+  box-shadow: 0px 0px 10px #999999;
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* ------ HOME -------- */
+.principal {
+  display: grid;
+  grid-column-gap: 25px;
+  grid-row-gap: 5px;
+  justify-content: auto;
+  align-items: start;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 75px auto;
+  grid-template-areas: "imagen titulo" "imagen texto";
+  height: 250px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.principal .imagen {
+  grid-area: imagen;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: auto;
+  height: 250px;
+  overflow: hidden;
+}
+.principal .imagen img {
+  height: 100%;
+}
+.principal h3 {
+  grid-area: titulo;
+  align-self: center;
+}
+.principal p {
+  grid-area: texto;
+}
+
+/* ------ REVISTAS -------- */
+#revistaCuerpo {
+  display: grid;
+  grid-column-gap: 40px;
+  grid-row-gap: 10px;
+  justify-content: auto;
+  align-items: start;
+  grid-template-columns: 8fr 3fr;
+  grid-template-rows: 60px auto;
+  grid-template-areas: "titRevista titRevista" "numeros suscripcion";
+  margin-top: 50px;
+}
+
+#revistaCuerpo .encabezado {
+  grid-area: titRevista;
+  font-size: 30px;
+}
+
+#numero {
+  grid-area: numeros;
+  display: grid;
+  grid-gap: 20px;
+}
+
+.revistaNumero {
+  display: grid;
+  grid-column-gap: 25px;
+  grid-row-gap: 0px;
+  justify-content: auto;
+  align-items: center;
+  grid-template-columns: 2fr 3fr 160px;
+  grid-template-rows: 45px 40px 1fr;
+  grid-template-areas: "imgNumero titNumero titNumero" "imgNumero subtitNumero subtitNumero" "imgNumero listaArt btnDescarga";
+  overflow: hidden;
+}
+.revistaNumero .imagen {
+  grid-area: imgNumero;
+  display: flex;
+  flex-direction: row;
+  justify-content: auto;
+  align-items: center;
+  height: 250px;
+  margin: 0px;
+  overflow: hidden;
+}
+.revistaNumero .imagen img {
+  height: 100%;
+  margin-left: -50px;
+}
+.revistaNumero h3 {
+  grid-area: titNumero;
+  font-size: 24px;
+  word-spacing: 5px;
+}
+.revistaNumero h4 {
+  grid-area: subtitNumero;
+  font-size: 18px;
+  color: #aaaaaa;
+}
+.revistaNumero h5 {
+  display: none;
+  color: #1a3958;
+}
+.revistaNumero ul {
+  grid-area: listaArt;
+  align-self: start;
+  list-style-type: circle;
+  font-size: 16px;
+  line-height: 24px;
+}
+.revistaNumero .descarga {
+  grid-area: btnDescarga;
+  align-self: end;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  margin-bottom: 20px;
+}
+.revistaNumero .descarga:hover i {
+  animation: rotacion 0.3s ease-out;
+}
+@keyframes rotacion {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#suscripcion {
+  grid-area: suscripcion;
+  padding: 20px 10px;
+}
+
+/*---------- FORO ------------*/
+#ideas {
+  display: grid;
+  grid-column-gap: 30px;
+  grid-row-gap: 10px;
+  justify-content: start;
+  align-items: auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 25px auto 40px;
+  grid-template-areas: "titIdeas" "aclaracion" "formulario" "botones";
+  margin-top: 50px;
+  background-image: url(../imagenes/foroCabecera.jpg);
+  background-size: cover;
+  background-position-y: bottom;
+  box-shadow: 0px 0px 10px #aaaaaa;
+}
+#ideas h2 {
+  grid-area: titIdeas;
+}
+#ideas p {
+  grid-area: aclaracion;
+  line-height: 1.5em;
+}
+#ideas .formularioForo {
+  grid-area: formulario;
+}
+#ideas .btnForo {
+  grid-area: botones;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+}
+#ideas .btnForo input {
+  margin-right: 10px;
+}
+
+/* POSTEOS */
+#posteo {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  justify-self: center;
+}
+
+.foro {
+  display: grid;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  justify-content: center;
+  align-items: start;
+  grid-template-columns: 4fr repeat(3, 70px);
+  grid-template-rows: 55px auto 45px;
+  grid-template-areas: "titForo titForo titForo titForo" "textForo textForo textForo textForo" ". mg com save";
+  height: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+.foro h3 {
+  grid-area: titForo;
+  align-self: center;
+}
+.foro .texto {
+  grid-area: textForo;
+  line-height: 1.6em;
+}
+.foro .iconos {
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.15s linear;
+}
+.foro .iconos:hover {
+  transform: scale(1.05);
+  font-weight: bold;
+  text-shadow: 0px 0px 2px #c2c2c2;
+}
+.foro .meGusta {
+  grid-area: mg;
+}
+.foro .comentario {
+  grid-area: com;
+}
+.foro .guardar {
+  grid-area: save;
+}
+
+/* ------ NOTICIAS --------- */
+#noticias {
+  display: flex;
+  flex-direction: column;
+  justify-content: auto;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+#noticias .noticias__section {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-content: auto;
+  align-items: auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 30px auto;
+  padding: 20px 30px;
+}
+#noticias .noticias__titulo {
+  grid-column: span 3;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+#noticias .noticias__titulo--recientes {
+  color: #207C26;
+}
+#noticias .noticias__titulo--destacadas {
+  color: #8F0403;
+}
+
+.noticias__article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  overflow: hidden;
+  height: 250px;
+  padding: 10px;
+  cursor: pointer;
+}
+.noticias__article .noticias__article__titulo {
+  font-size: 20px;
+  line-height: 22px;
+  margin: 5px 0px;
+}
+.noticias__article .noticias__article__titulo--recientes {
+  color: #207C26;
+}
+.noticias__article .noticias__article__titulo--destacadas {
+  color: #8F0403;
+}
+.noticias__article .noticias__article__enlace {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -100%;
+  left: 0px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 180px;
+  text-decoration: none;
+  text-align: center;
+  word-spacing: 2px;
+  transition: all 0.3s ease-out;
+  transition-delay: 0.2s;
+  cursor: pointer;
+  background-color: #000000b3;
+  color: #ffffff;
+}
+.noticias__article .noticias__article__enlace:hover {
+  color: #668bb1;
+}
+.noticias__article:hover .noticias__article__enlace {
+  transform: translateY(100%);
+}
+
+/* -----------INFO--------------------------- */
+#info {
+  display: grid;
+  grid-column-gap: 30px;
+  grid-row-gap: 20px;
+  justify-content: center;
+  align-items: auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2fr 3fr;
+  margin-top: 50px;
+}
+
+.nosotros {
+  grid-column: span 3;
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 5px;
+  justify-content: auto;
+  align-items: auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50px auto;
+  grid-template-areas: "imgNosotros titNosotros titNosotros" "imgNosotros parUno parDos";
+  height: 250px;
+  margin-top: 15px;
+  padding-right: 30px;
+}
+.nosotros .imagen {
+  grid-area: imgNosotros;
+  height: 250px;
+}
+.nosotros .imagen img {
+  height: 100%;
+}
+.nosotros h2 {
+  grid-area: titNosotros;
+  align-self: end;
+}
+.nosotros .colUno {
+  grid-area: parUno;
+}
+.nosotros .colDos {
+  grid-area: parDos;
+}
+
+.propositos {
+  grid-column: 1/span 3;
+  display: grid;
+  grid-column-gap: 60px;
+  grid-row-gap: 0px;
+  justify-content: auto;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50px auto;
+}
+.propositos h3 {
+  grid-column: 1/span 3;
+  align-self: center;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.propositos .tarjetas {
+  display: grid;
+  grid-column-gap: 0px;
+  grid-row-gap: 10px;
+  justify-content: auto;
+  align-items: start;
+  grid-template-rows: 70px auto 30px;
+  height: 350px;
+  padding: 0px 10px;
+  border-radius: 15px;
+  text-align: center;
+}
+.propositos .tarjetas p {
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 15px;
+}
+.propositos .tarjetas img {
+  width: 60px;
+  margin: 15px auto;
+}
+.propositos .tarjetas h5 {
+  font-family: righteous;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0px;
+  color: #bcbcbc;
+}
+
+/*---------- FOOTER ------------*/
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+  margin-top: 20px;
+  background-image: linear-gradient(to bottom, #444, #111);
+  color: #ffffff;
+  line-height: 2em;
+  text-align: center;
+  /*--------------------------------------*/
+}
+footer p a {
+  text-decoration: none;
+  transition: all 0.1s linear;
+}
+footer p a:hover {
+  color: #c2c2c2;
+  text-decoration: underline;
+}
+footer #redes {
+  display: flex;
+  justify-content: center;
+}
+footer #redes i {
+  font-size: 24px;
+  margin: 5px 10px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.1s linear;
+}
+footer #redes .facebook:hover {
+  color: #0674e7;
+  transform: scale(1.25);
+}
+footer #redes .twitter:hover {
+  color: #1da1f2;
+  transform: scale(1.25);
+}
+footer #redes .linkedin:hover {
+  color: #0a66c2;
+  transform: scale(1.25);
+}
+footer #redes .github:hover {
+  color: #ff7300;
+  transform: scale(1.25);
+}
+
+/* -------------------------------------------------- */
+/* ---------------- MEDIA QUERIES ------------------- */
+/* -------------------------------------------------- */
+/* ------ MEDIA MD ----- */
+@media screen and (max-width: 992px) {
+  /*CABECERA*/
+  .contenedor h1 a {
+    font-size: 34px;
+    letter-spacing: 2.5px;
+  }
+
+  /* --------------------------- */
+  /*HOME*/
+  .principal {
+    height: 300px;
+  }
+  .principal .imagen {
+    height: 300px;
+  }
+
+  /* --------------------------- */
+  /*REVISTAS*/
+  #revistaCuerpo {
+    grid-column-gap: 20px;
+    grid-template-rows: 85px auto;
+  }
+  #revistaCuerpo .encabezado {
+    grid-area: titRevista;
+  }
+
+  #numero {
+    grid-area: numeros;
+  }
+
+  .revistaNumero {
+    grid-template-columns: 1fr 1fr 140px;
+    grid-template-rows: 55px 40px 1fr;
+    grid-column-gap: 10px;
+    grid-template-areas: "imgNumero titNumero titNumero" "imgNumero subtitNumero btnDescarga" "imgNumero listaArt listaArt";
+  }
+  .revistaNumero .imagen {
+    grid-area: imgNumero;
+  }
+  .revistaNumero .imagen img {
+    width: auto;
+    height: 100%;
+  }
+  .revistaNumero h3 {
+    grid-area: titNumero;
+    font-size: 24px;
+    word-spacing: 3px;
+  }
+  .revistaNumero h4 {
+    grid-area: subtitNumero;
+  }
+  .revistaNumero ul {
+    grid-area: listaArt;
+    line-height: 20px;
+    border-top: 1px solid #d3d3d3;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  .revistaNumero .descarga {
+    grid-area: btnDescarga;
+    font-size: 14px;
+    width: 105px;
+    margin-bottom: 0px;
+  }
+
+  /* FORO */
+  #posteo {
+    display: grid;
+  }
+
+  .foro {
+    display: grid;
+    grid-template-rows: 45px auto 25px;
+    grid-template-areas: "titForo titForo titForo titForo" "textForo textForo textForo textForo" ". mg com save";
+  }
+  .foro h3 {
+    grid-area: titForo;
+    font-size: 20px;
+  }
+  .foro .texto {
+    grid-area: textForo;
+    line-height: 1.4em;
+  }
+
+  /* NOTICIAS */
+  .noticias__article {
+    position: relative;
+    overflow: hidden;
+    height: 350px;
+    padding: 15px 5px;
+  }
+  .noticias__article .noticias__article__enlace {
+    position: absolute;
+    top: 80%;
+    height: 20%;
+    background-image: linear-gradient(to top, white, #f6f6f6);
+    background-blend-mode: hard-light;
+    opacity: 0.75;
+    color: #243b52;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 80px;
+    text-align: center;
+    text-decoration: none;
+    word-spacing: normal;
+    transition: none;
+  }
+  .noticias__article:hover a {
+    transform: none;
+  }
+
+  /* INFO */
+  #info {
+    display: grid;
+    grid-column-gap: inherit;
+    grid-row-gap: 30px;
+    justify-content: center;
+    align-items: inherit;
+    grid-template-rows: 280px 2Fr;
+  }
+
+  .nosotros {
+    display: grid;
+    grid-template-columns: 35% repeat(2, 1fr);
+    grid-column-gap: 15px;
+    height: 100%;
+    padding-right: 20px;
+  }
+  .nosotros .imagen {
+    grid-area: imgNosotros;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    position: relative;
+    overflow: hidden;
+  }
+  .nosotros .imagen img {
+    height: 100%;
+    position: absolute;
+  }
+  .nosotros h2 {
+    grid-area: titNosotros;
+  }
+  .nosotros .colUno {
+    grid-area: parUno;
+  }
+  .nosotros .colDos {
+    grid-area: parDos;
+  }
+
+  .propositos {
+    grid-template-rows: 60px auto;
+    grid-column-gap: 20px;
+  }
+  .propositos .tarjetas {
+    display: grid;
+    grid-template-rows: 60px auto 30px;
+    height: 320px;
+  }
+  .propositos .tarjetas p {
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+}
+/* ------ MEDIA SM ----- */
+@media screen and (max-width: 767px) {
+  /*CABECERA*/
+  .nav-colapsada {
+    width: 100%;
+    margin-right: 12px;
+    text-align: right;
+  }
+
+  .contenedor h1 a {
+    font-size: 34px;
+    letter-spacing: 1.5px;
+  }
+
+  .intro {
+    height: calc(80vh - 50px);
+  }
+
+  /*HOME*/
+  .principal {
+    height: 310px;
+    grid-template-rows: 55px auto;
+  }
+  .principal h3 {
+    font-size: 20px;
+  }
+  .principal .imagen {
+    height: 310px;
+  }
+  .principal p {
+    line-height: 1.2em;
+  }
+
+  /*REVISTAS*/
+  #revistaCuerpo {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 65px 1fr auto;
+    grid-row-gap: 20px;
+    grid-template-areas: "titRevista" "numeros" "suscripcion";
+    margin-top: 50px;
+  }
+  #revistaCuerpo .encabezado {
+    grid-area: titRevista;
+    font-size: 24px;
+    align-self: center;
+  }
+
+  #numero {
+    grid-area: numeros;
+  }
+
+  .revistaNumero .imagen {
+    grid-area: imgNumero;
+    height: 250px;
+  }
+  .revistaNumero .imagen img {
+    margin-left: -50px;
+  }
+  .revistaNumero h3 {
+    grid-area: titNumero;
+    word-spacing: 2px;
+  }
+  .revistaNumero h4 {
+    grid-area: subtitNumero;
+  }
+  .revistaNumero .contenidoListado {
+    grid-area: listaArt;
+  }
+  .revistaNumero .descarga {
+    grid-area: btnDescarga;
+  }
+
+  /*FORO*/
+  #ideas {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    justify-content: inherit;
+    align-items: inherit;
+    grid-template-rows: 30px 25px auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: "titIdeas titideas" "aclaracion aclaracion" "formulario botones";
+  }
+  #ideas h2 {
+    grid-area: titIdeas;
+  }
+  #ideas p {
+    grid-area: aclaracion;
+  }
+
+  .formularioForo {
+    grid-area: formulario;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 36px 1fr;
+    grid-template-areas: "encabezado botones" "cuerpo botones ";
+    grid-gap: 15px;
+  }
+  .formularioForo .encabezado {
+    grid-area: encabezado;
+  }
+  .formularioForo .cuerpo {
+    grid-area: cuerpo;
+  }
+  .formularioForo .btnForo {
+    grid-area: botones;
+  }
+  .formularioForo .btnForo input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  /* POSTEOS */
+  #posteo {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .foro {
+    display: grid;
+    grid-template-rows: 35px auto 25px;
+    grid-template-areas: "titForo titForo titForo titForo" "textForo textForo textForo textForo" ". mg com save";
+  }
+
+  .foro h3 {
+    grid-area: titForo;
+  }
+
+  .foro .texto {
+    grid-area: textForo;
+    line-height: 1.5em;
+  }
+
+  /*NOTICIAS*/
+  .noticias__section {
+    display: grid;
+    grid-gap: 15px;
+    padding: 10px 30px;
+  }
+
+  .noticias__article {
+    grid-column: span 3;
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    padding-bottom: 25px;
+  }
+  .noticias__article .noticias__article__titulo {
+    line-height: 22px;
+    margin: 0px;
+  }
+  .noticias__article .noticias__article__enlace {
+    position: absolute;
+    display: block;
+    height: 60px;
+    width: 100%;
+    top: 60%;
+    line-height: 70px;
+    font-weight: bold;
+    background-image: linear-gradient(to top, white, #f6f6f6);
+    background-blend-mode: hard-light;
+    opacity: 0.75;
+    color: #243b52;
+    font-weight: 600;
+  }
+
+  /* INFO */
+  .nosotros {
+    display: grid;
+    grid-column-gap: 15px;
+    grid-row-gap: 0px;
+    justify-content: inherit;
+    align-items: inherit;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "titNosotros titNosotros titNosotros" "imgNosotros parUno parDos";
+    height: 100%;
+    padding-right: 0px;
+  }
+  .nosotros .imagen {
+    grid-area: imgNosotros;
+  }
+  .nosotros h2 {
+    grid-area: titNosotros;
+    height: 100%;
+    align-self: center;
+    text-align: center;
+    border-bottom: 1px solid #d3d3d3;
+  }
+  .nosotros p {
+    font-size: 14px;
+  }
+  .nosotros p .colUno {
+    grid-area: parUno;
+  }
+  .nosotros p .colDos {
+    grid-area: parDos;
+    padding-right: 15px;
+  }
+
+  .propositos {
+    grid-template-rows: 24px auto;
+    grid-row-gap: 15px;
+    margin-top: 15px;
+  }
+  .propositos .tarjetas {
+    grid-column: span 3;
+    display: grid;
+    grid-column-gap: 15px;
+    grid-row-gap: 0px;
+    justify-content: inherit;
+    align-items: center;
+    grid-template-columns: 80px auto;
+    grid-template-rows: auto;
+    height: 100%;
+    padding: 0px 8px;
+  }
+  .propositos .tarjetas p {
+    text-align: left;
+  }
+  .propositos .tarjetas h5 {
+    display: none;
+  }
+}
+/* ------ MEDIA XS ----- */
+@media screen and (max-width: 575px) {
+  /*CABECERA*/
+  .contenedor h1 a {
+    font-size: 20px;
+  }
+
+  .intro {
+    background-color: #d1d1d1c5;
+    background-blend-mode: soft-light;
+    height: calc(50vh - 50px);
+    text-align: center;
+  }
+  .intro div {
+    flex-direction: column;
+    height: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* HOME */
+  .principal {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas: "titulo" "texto";
+    grid-row-gap: 10px;
+    height: fit-content;
+    text-align: center;
+    overflow: visible;
+  }
+  .principal .imagen {
+    grid-area: imagen;
+    display: none;
+  }
+  .principal h3 {
+    grid-area: titulo;
+  }
+  .principal p {
+    grid-area: texto;
+    font-size: 14px;
+    padding-top: 10px;
+    margin: 10px;
+    margin-top: 0px;
+    border-top: 1px solid #d3d3d3;
+  }
+
+  /*REVISTAS*/
+  #revistaCuerpo {
+    grid-template-columns: 1fr;
+    grid-template-rows: 75px 1fr auto;
+    grid-row-gap: 20px;
+    grid-template-areas: "titRevista" "numeros" "suscripcion";
+    margin-top: 50px;
+  }
+  #revistaCuerpo .encabezado {
+    grid-area: titRevista;
+    font-size: 20px;
+    text-align: center;
+    align-self: center;
+  }
+
+  #numero {
+    grid-area: numeros;
+    grid-gap: 15px;
+  }
+
+  .revistaNumero {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    justify-content: inherit;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 150px 45px 30px 50px;
+    grid-template-areas: "imgNumero imgNumero" "titNumero titNumero" "subtitNumero subtitNumero" "btnDescarga despliegue";
+    min-height: 300px;
+    margin: 0 auto;
+  }
+  .revistaNumero .imagen {
+    grid-area: imgNumero;
+    align-items: center;
+    height: 150px;
+    overflow: hidden;
+  }
+  .revistaNumero .imagen img {
+    width: 100%;
+    height: auto;
+    margin-left: 0px;
+  }
+  .revistaNumero h3 {
+    grid-area: titNumero;
+    font-size: 20px;
+    word-spacing: 1px;
+    text-align: center;
+  }
+  .revistaNumero h4 {
+    grid-area: subtitNumero;
+    text-align: center;
+  }
+  .revistaNumero .contenido {
+    grid-area: despliegue;
+    display: block;
+    width: 95px;
+    font-size: 14px;
+  }
+  .revistaNumero ul {
+    display: none;
+  }
+  .revistaNumero .descarga {
+    grid-area: btnDescarga;
+    align-self: center;
+    font-size: 14px;
+    justify-self: end;
+    width: 105px;
+    margin-bottom: 0px;
+  }
+
+  /*FORO*/
+  #ideas {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 5px;
+    justify-content: start;
+    align-items: inherit;
+    grid-template-columns: 1fr;
+    grid-template-rows: 35px 35px auto 40px;
+    grid-template-areas: "titIdeas" "aclaracion" "formulario";
+    background-color: #d1d1d1c5;
+    background-image: url(../imagenes/foroCabecera.jpg);
+    background-blend-mode: soft-light;
+    background-size: cover;
+    background-position-y: top;
+    box-shadow: 0px 0px 10px #aaaaaa;
+  }
+  #ideas h2 {
+    grid-area: titIdeas;
+  }
+  #ideas p {
+    grid-area: aclaracion;
+    line-height: 1.2em;
+  }
+
+  .formularioForo {
+    grid-area: formulario;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 36px 1fr 40px;
+    grid-template-areas: "encabezado " "cuerpo" "botones";
+    grid-gap: 15px;
+  }
+  .formularioForo .btnForo input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .encabezado {
+    grid-area: encabezado;
+  }
+
+  .cuerpo {
+    grid-area: cuerpo;
+  }
+
+  /* POSTEOS */
+  #posteo {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .foro {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 45px auto 25px;
+    grid-template-areas: "titForo titForo titForo" "textForo textForo textForo" "mg com save";
+    height: 100%;
+  }
+  .foro h3 {
+    grid-area: titForo;
+    font-size: 20px;
+    align-self: end;
+  }
+  .foro .texto {
+    grid-area: textForo;
+    line-height: 1.5em;
+  }
+  .foro .iconos {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /*  NOTICIAS */
+  #noticias .noticias__titulo {
+    font-size: 20px;
+    text-indent: 10px;
+  }
+
+  .noticias__article {
+    position: relative;
+    padding-bottom: 15px;
+  }
+  .noticias__article .noticias__article__enlace {
+    position: absolute;
+    display: block;
+    height: 20%;
+    width: 100%;
+    top: 80%;
+    line-height: 40px;
+    background-image: linear-gradient(to top, white, #f6f6f6);
+    background-blend-mode: hard-light;
+    opacity: 0.85;
+    color: #243b52;
+    font-weight: 400;
+  }
+
+  /* INFO */
+  #info {
+    grid-template-rows: 360px 1fr;
+  }
+
+  .nosotros {
+    display: grid;
+    grid-column-gap: 15px;
+    grid-row-gap: 5px;
+    justify-content: inherit;
+    align-items: inherit;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2fr 30px 3fr;
+    grid-template-areas: "imgNosotros imgNosotros" "titNosotros titNosotros" "parUno parDos";
+    padding-right: 0px;
+  }
+  .nosotros .imagen {
+    grid-area: imgNosotros;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+  }
+  .nosotros .imagen img {
+    width: 100%;
+    height: auto;
+    margin-top: 25px;
+  }
+  .nosotros h2 {
+    grid-area: titNosotros;
+    height: 100%;
+    align-self: center;
+    text-align: center;
+    border-bottom: 1px solid #d3d3d3;
+  }
+  .nosotros p {
+    grid-area: texto;
+    grid-column: span 2;
+    font-size: 14px;
+    line-height: 1.2em;
+    padding: 0px 5px 10px 5px;
+  }
+  .nosotros p .colUno {
+    grid-area: parUno;
+  }
+  .nosotros p .colDos {
+    grid-area: parDos;
+    padding-right: 0px;
+  }
+
+  .propositos {
+    grid-template-rows: 24px auto;
+    grid-row-gap: 15px;
+    margin-top: 15px;
+  }
+  .propositos .tarjetas {
+    grid-template-columns: 70px auto;
+    grid-row-gap: 0px;
+    padding: 8px;
+  }
+  .propositos .tarjetas p {
+    font-size: 14px;
+    line-height: 1.2em;
+    margin-top: 0px;
+  }
+
+  /* FOOTER */
+  footer {
+    height: 150px;
+    line-height: 1.2em;
+  }
+  footer p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  footer #redes i {
+    font-size: 20px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

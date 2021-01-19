@@ -1,0 +1,258 @@
+@import 'mixins';
+
+/* ------ MEDIA SM ----- */
+@media screen and (max-width: 767px){
+    /*CABECERA*/
+    .nav-colapsada{
+        width: 100%;
+        margin-right: 12px;
+        text-align: right;
+    }
+
+    .contenedor h1 a{
+        font-size: $displayLg;
+        letter-spacing: 1.5px;
+    }
+
+    .intro{
+        height: calc(80vh - 50px);
+
+    }
+    
+    /*HOME*/
+    .principal{
+        height: 310px;
+        grid-template-rows: 55px auto;
+    
+        h3{
+            font-size: $subtitulo;
+        }
+        
+        .imagen{
+            height: 310px;
+        }
+        p{
+            line-height: 1.2em;
+        }    
+    }
+
+
+    /*REVISTAS*/
+    #revistaCuerpo{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 65px 1fr auto;
+        grid-row-gap: 20px;
+        grid-template-areas:
+            "titRevista"
+            "numeros"
+            "suscripcion";
+        margin-top: 50px;
+        
+        .encabezado{
+            grid-area: titRevista;
+            font-size: $titulo;
+            align-self: center;
+        }
+    }
+
+
+
+    #numero{
+        grid-area: numeros;
+    }
+
+    .revistaNumero{
+
+        .imagen{
+            grid-area: imgNumero;
+            height: 250px;
+            img{
+                margin-left: -50px;
+            }
+        }
+
+
+        h3{
+            grid-area: titNumero;
+            word-spacing: 2px;
+        }
+
+        h4{
+            grid-area: subtitNumero;
+        }
+
+        .contenidoListado{
+            grid-area: listaArt;
+        }
+
+
+        .descarga{
+            grid-area:btnDescarga;
+        }
+    }
+
+    /*FORO*/
+    #ideas{
+        @include grids(20px, 10px, inherit, inherit);
+        grid-template-rows: 30px 25px auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "titIdeas titideas"
+            "aclaracion aclaracion"
+            "formulario botones";
+        
+        h2{
+            grid-area: titIdeas;
+        }
+
+        p{
+            grid-area: aclaracion;
+        }
+    }
+
+    .formularioForo{
+        grid-area: formulario;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 36px 1fr;
+        grid-template-areas:
+            "encabezado botones"
+            "cuerpo botones ";
+        grid-gap: 15px;
+
+        .encabezado{
+            grid-area: encabezado;
+        }
+        .cuerpo{
+            grid-area: cuerpo;
+        }
+
+        .btnForo{
+            grid-area: botones;
+            
+            input{
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    /* POSTEOS */
+    #posteo{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .foro{
+        display: grid;
+        grid-template-rows: 35px auto 25px;
+       grid-template-areas: 
+            "titForo titForo titForo titForo"
+            "textForo textForo textForo textForo"
+            ". mg com save";
+    }
+    .foro h3{
+        grid-area: titForo;
+    }
+    .foro .texto{
+        grid-area: textForo;
+        line-height: 1.5em;
+    }
+
+
+    /*NOTICIAS*/
+    .noticias__section{
+        display: grid;
+        grid-gap: 15px;
+        padding: 10px 30px;
+    }
+    
+    .noticias__article{
+        grid-column: span 3;
+        position: relative;
+        overflow: hidden;
+        height: fit-content;
+        padding-bottom: 25px;
+        
+        .noticias__article__titulo{
+            line-height: 22px;
+            margin: 0px;
+        }
+        
+        .noticias__article__enlace{
+            position: absolute;
+            display: block;
+            height: 60px;
+            width: 100%;
+            top: 60%;
+            line-height: 70px;
+            font-weight: bold;
+            @include verNoticia(0.75, 600);
+        }
+
+    }
+
+
+
+    /* INFO */
+    .nosotros{
+        @include grids(15px, 0px, inherit, inherit);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "titNosotros titNosotros titNosotros"
+            "imgNosotros parUno parDos";
+        height: 100%;
+        padding-right: 0px;
+        
+        .imagen{
+            grid-area: imgNosotros;
+        }
+
+
+        h2{
+            grid-area: titNosotros;
+            height: 100%;
+            align-self: center;
+            text-align: center;
+            border-bottom: 1px solid $colorGris4;
+        }
+
+        p{
+            font-size: $cuerpoSm;
+            .colUno{
+                grid-area: parUno;
+            }
+
+            .colDos{
+                grid-area: parDos;
+                padding-right: 15px;
+            }
+        }
+    }
+
+
+    .propositos{
+        grid-template-rows: 24px auto;
+        grid-row-gap: 15px;
+        margin-top: 15px;
+
+        .tarjetas{
+            grid-column: span 3;
+            @include grids(15px, 0px, inherit, center);
+            grid-template-columns: 80px auto;
+            grid-template-rows: auto;
+            height: 100%;
+            padding: 0px 8px;
+
+            p{
+                text-align: left;
+            }
+
+            h5{
+                display: none;
+            }
+        }
+
+    }
+
+}

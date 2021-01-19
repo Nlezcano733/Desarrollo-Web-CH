@@ -1,0 +1,331 @@
+/* ------ MEDIA XS ----- */
+@media screen and (max-width: 575px){
+    /*CABECERA*/
+
+    .contenedor h1 a{
+        font-size: $subtitulo;
+    }
+
+    .intro{
+        background-color: $colorGrisTransp;
+        background-blend-mode: soft-light;
+        height: calc(50vh - 50px);
+        text-align: center;
+        
+        div{
+            flex-direction: column;
+            height: 100%;
+            padding: 8px;
+            font-size: $cuerpoSm;
+        }
+    }
+
+
+
+    /* HOME */
+    .principal{
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 1fr;
+        grid-template-areas:
+            "titulo"
+            "texto";
+        grid-row-gap: 10px;
+        height: fit-content;
+        text-align: center;
+        overflow: visible;
+        
+        .imagen{
+            grid-area: imagen;
+            display: none;
+        } 
+
+        h3{
+            grid-area: titulo;
+        }
+        p{
+            grid-area: texto;
+            font-size: $cuerpoSm;
+            padding-top: 10px;
+            margin: 10px;
+            margin-top: 0px;
+            border-top: 1px solid $colorGris4;
+        }
+    }
+
+
+    /*REVISTAS*/
+    #revistaCuerpo{
+        grid-template-columns: 1fr;
+        grid-template-rows: 75px 1fr auto;
+        grid-row-gap: 20px;
+        grid-template-areas:
+            "titRevista"
+            "numeros"
+            "suscripcion";
+        margin-top: 50px;
+
+        .encabezado{
+            grid-area: titRevista;
+            font-size: $subtitulo;
+            text-align: center;
+            align-self: center;
+        }
+    }
+
+
+    #numero{
+        grid-area: numeros;
+        grid-gap: 15px;
+    }
+
+    .revistaNumero{
+        @include grids(10px, 10px, inherit, center);
+        grid-template-columns:1fr 1fr;
+        grid-template-rows: 150px 45px 30px 50px;
+        grid-template-areas: 
+            "imgNumero imgNumero"
+            "titNumero titNumero"
+            "subtitNumero subtitNumero"
+            "btnDescarga despliegue";
+        min-height: 300px;
+        margin: 0 auto;
+        
+        .imagen{
+            grid-area: imgNumero;
+            align-items: center;
+            height: 150px;
+            overflow: hidden;
+
+            img{
+                width: 100%;
+                height: auto;
+                margin-left: 0px;
+            }
+        }
+        
+        h3{
+            grid-area: titNumero;
+            font-size: $subtitulo;
+            word-spacing: 1px;
+            text-align: center;
+        }
+
+        h4{
+            grid-area: subtitNumero;
+            text-align: center;
+        }
+
+        .contenido{
+            grid-area: despliegue;
+            display: block;
+            width: 95px;
+            font-size: $cuerpoSm;
+        }
+        
+        ul{
+            display: none;
+        }
+
+        .descarga{
+            grid-area:btnDescarga;
+            align-self: center;
+            font-size: $cuerpoSm;
+            justify-self: end;
+            width: 105px;
+            margin-bottom: 0px;
+        }
+    }
+
+
+    /*FORO*/
+
+    #ideas{
+        @include grids(30px, 5px, start, inherit);
+        grid-template-columns: 1fr;
+        grid-template-rows: 35px 35px auto 40px;
+        grid-template-areas:
+            "titIdeas"
+            "aclaracion"
+            "formulario";
+        background-color: $colorGrisTransp;
+        background-image: url(../imagenes/foroCabecera.jpg);
+        background-blend-mode: soft-light;
+        background-size: cover;
+        background-position-y: top;
+        box-shadow: 0px 0px 10px $colorGris7;
+        
+        h2{
+            grid-area: titIdeas;
+        }
+        p{
+            grid-area: aclaracion;
+            line-height: 1.2em;
+        }
+    }
+
+    .formularioForo{
+        grid-area: formulario;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 36px 1fr 40px;
+        grid-template-areas:
+            "encabezado "
+            "cuerpo"
+            "botones";
+        grid-gap: 15px;
+        
+        .btnForo{            
+            input{
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .encabezado{
+        grid-area: encabezado;
+    }
+    .cuerpo{
+        grid-area: cuerpo;
+    }
+
+    /* POSTEOS */
+    #posteo{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .foro{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 45px auto 25px;
+        grid-template-areas: 
+            "titForo titForo titForo"
+            "textForo textForo textForo"
+            "mg com save";
+        height: 100%;
+        h3{
+            grid-area: titForo;
+            font-size:  $subtitulo;
+            align-self: end;
+        }
+        .texto{
+            grid-area: textForo;
+            line-height: 1.5em;
+        }
+
+        .iconos{
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+
+    /*  NOTICIAS */
+    #noticias{
+        .noticias__titulo{
+            font-size: $subtitulo;
+            text-indent: 10px;
+        }
+    }
+
+    .noticias__article{
+        position: relative;
+        padding-bottom: 15px;
+
+        .noticias__article__enlace{
+            position: absolute;
+            display: block;
+            height: 20%;
+            width: 100%;
+            top: 80%;
+            line-height: 40px;
+            @include verNoticia(0.85, 400);
+        }
+    }
+
+
+    /* INFO */
+    #info{
+        grid-template-rows: 360px 1fr;
+    }
+    .nosotros{
+        @include grids(15px, 5px, inherit, inherit);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 2fr 30px 3fr;
+        grid-template-areas:
+            "imgNosotros imgNosotros"
+            "titNosotros titNosotros"
+            "parUno parDos";
+        padding-right: 0px;
+        
+        .imagen{
+            grid-area: imgNosotros;
+            width: 100%;
+            overflow: hidden;
+            align-items: center;
+            
+            img{
+                width: 100%;
+                height: auto;
+                margin-top: 25px;
+            }
+        }
+
+        h2{
+            grid-area: titNosotros;
+            height: 100%;
+            align-self: center;
+            text-align: center;
+            border-bottom: 1px solid $colorGris4;
+        }
+
+        p{
+            grid-area: texto;
+            grid-column: span 2;
+            font-size: $cuerpoSm;
+            line-height: 1.2em;
+            padding: 0px 5px 10px 5px;
+            .colUno{
+                grid-area: parUno;
+            }
+
+            .colDos{
+                grid-area: parDos;
+                padding-right: 0px;
+            }
+        }
+    }
+
+
+    .propositos{
+        grid-template-rows: 24px auto;
+        grid-row-gap: 15px;
+        margin-top: 15px;
+
+        .tarjetas{
+            grid-template-columns: 70px auto;
+            grid-row-gap: 0px;
+            padding: 8px;
+
+            p{
+                font-size: 14px;
+                line-height: 1.2em;
+                margin-top: 0px;
+            }
+        }
+        
+    }
+
+    /* FOOTER */
+    footer{
+        height: 150px;
+        line-height: 1.2em;
+        p{
+            font-size:14px;
+            margin-bottom: 10px;
+        }
+
+        #redes i{
+            font-size: $subtitulo;
+        }
+    }
+}

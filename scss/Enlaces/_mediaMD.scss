@@ -1,0 +1,198 @@
+/* -------------------------------------------------- */
+/* ---------------- MEDIA QUERIES ------------------- */
+/* -------------------------------------------------- */
+
+
+
+/* ------ MEDIA MD ----- */
+@media screen and (max-width: 992px) {
+    /*CABECERA*/
+    .contenedor h1 a{
+        font-size: $displayLg;
+        letter-spacing: 2.5px;
+    }
+
+/* --------------------------- */
+
+    /*HOME*/
+    .principal{
+        height: 300px;
+
+        .imagen{
+            height: 300px;
+        }
+    }
+
+/* --------------------------- */
+
+
+    /*REVISTAS*/
+    #revistaCuerpo{
+        grid-column-gap: 20px;
+        grid-template-rows: 85px auto;
+        
+        .encabezado{
+            grid-area: titRevista;
+        }
+    }
+
+
+    #numero{
+        grid-area: numeros;
+    }
+
+    .revistaNumero{
+        grid-template-columns: 1fr 1fr 140px;
+        grid-template-rows: 55px 40px 1fr;
+        grid-column-gap: 10px;
+        grid-template-areas: 
+            "imgNumero titNumero titNumero"
+            "imgNumero subtitNumero btnDescarga"
+            "imgNumero listaArt listaArt";
+        
+        .imagen{
+            grid-area: imgNumero;
+
+            img{
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        h3{
+            grid-area: titNumero;
+            font-size: $titulo;
+            word-spacing: 3px;
+        }
+
+        h4{
+            grid-area: subtitNumero;
+        }
+
+        ul{
+            grid-area: listaArt;
+            line-height: 20px;
+            border-top: 1px solid $colorGris4;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+
+        .descarga{
+            grid-area:btnDescarga;
+            font-size: $cuerpoSm;
+            width: 105px;
+            margin-bottom: 0px;
+        }
+    }
+
+
+    /* FORO */
+    #posteo{
+        display: grid;
+    } 
+    .foro{
+        display: grid;
+        grid-template-rows: 45px auto 25px;
+        grid-template-areas: 
+            "titForo titForo titForo titForo"
+            "textForo textForo textForo textForo"
+            ". mg com save";
+
+            h3{
+                grid-area: titForo;
+                font-size: $subtitulo;
+            }
+        
+        .texto{
+            grid-area: textForo;
+            line-height: 1.4em;
+        }
+    }
+
+    /* NOTICIAS */
+
+    .noticias__article{ 
+        position: relative;
+        overflow: hidden;
+        height: 350px;
+        padding: 15px 5px;
+
+        .noticias__article__enlace{
+            position: absolute;
+            top: 80%;
+            height: 20%;
+            @include verNoticia(0.75, 800);
+            font-size: $cuerpo;
+            line-height: 80px;
+            text-align: center;
+            text-decoration: none;
+            word-spacing: normal;
+            transition: none;
+        }
+        &:hover a{
+            transform: none;
+        }
+
+    }
+
+    /* INFO */
+    #info{
+        @include grids(inherit, 30px, center, inherit);
+        grid-template-rows: 280px 2Fr;
+    }
+    .nosotros{
+        display: grid;
+        grid-template-columns: 35% repeat(2, 1fr);
+        grid-column-gap: 15px;
+        height: 100%;
+        padding-right: 20px;
+
+        .imagen{
+            grid-area: imgNosotros;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: left;
+            position: relative;
+            overflow: hidden;
+            
+            img{
+                height: 100%;
+                position: absolute;
+            }
+        }
+
+        h2{
+            grid-area: titNosotros;
+        }
+
+        .colUno{
+            grid-area: parUno;
+        }
+
+        .colDos{
+            grid-area: parDos;
+        }
+    }
+
+    
+
+    .propositos{
+        grid-template-rows: 60px auto;
+        grid-column-gap: 20px;
+        
+        .tarjetas{
+            display: grid;
+            grid-template-rows: 60px auto 30px;
+            height: 320px;
+            
+            p{
+                font-size: $cuerpo;
+                line-height: 1.5em;
+            }
+        }
+    }
+
+}
+
+

@@ -1,0 +1,18 @@
+/*----- FUENTES --------*/
+@font-face{
+    font-family: righteous;
+    src: url(../Fuentes/Righteous/Righteous-Regular.ttf) format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+$fuenteTitulo : righteous;
+
+$cuerpoSm: 14px;
+$cuerpo: 16px;
+$cuerpoLg: 18px;
+$subtitulo: 20px;
+$titulo: 24px;
+$display: 30px;
+$displayLg: 34px;
+$jumbo: 38px;

@@ -1,0 +1,519 @@
+@import 'Enlaces/colores';
+@import 'Enlaces/fuente';
+@import 'Enlaces/mixins';
+
+/* COMPONENTE */
+.articulo{
+    background-color: $colorGris1;
+    box-shadow: 0px 0px 10px $colorGris3;
+}
+
+/* ------ CABECERA ------ */
+.contenedor{
+    position: fixed;
+    top: 0px;
+    @include flexbox(row, space-between, center);
+    background-image: $gradienteAzul;
+    z-index: 1;
+    
+    .titulo{
+        font-size: $jumbo;
+        line-height: 50px;
+        text-align: left;
+        text-transform: uppercase;
+
+        a{
+            color: $colorAzul0;
+            font-family: $fuenteTitulo;
+            text-decoration: none;
+
+            span{
+                font-family: $fuenteTitulo;
+                color: $colorAzul6;
+            }
+        }
+    }
+}
+
+/* ----- */
+
+.intro{
+    height: calc(100vh - 50px);
+    margin-top: 50px;
+    padding: 30px;
+    background-image: url(../Imagenes/LibroBlanco.jpg);
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: right;
+    box-shadow: 0px 0px 10px $colorGris8;
+    align-items: flex-end;
+    text-align: right;
+}
+
+
+/* ------ HOME -------- */
+
+.principal{
+    @include grids (25px, 5px, auto, start);
+    @extend .articulo;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 75px auto;
+    grid-template-areas: 
+        "imagen titulo"
+        "imagen texto";
+    height: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .imagen{
+        grid-area: imagen;
+        @include flexbox(row, center, auto);
+        height: 250px;
+        overflow: hidden;
+
+        img{
+            height: 100%;
+        }
+    }
+    
+    h3{
+        grid-area: titulo;
+        align-self: center;
+    }
+    p{
+        grid-area: texto;
+    }
+}
+
+
+/* ------ REVISTAS -------- */
+
+#revistaCuerpo{
+    @include grids(40px, 10px, auto, start);
+    grid-template-columns: 8fr 3fr;
+    grid-template-rows: 60px auto;
+    grid-template-areas:
+        "titRevista titRevista"
+        "numeros suscripcion";
+    margin-top: 50px;
+}
+#revistaCuerpo .encabezado{
+    grid-area: titRevista;
+    font-size: $display;
+}
+
+#numero{
+    grid-area: numeros;
+    display: grid;
+    grid-gap: 20px;
+}
+
+.revistaNumero{
+    @include grids (25px, 0px, auto, center);
+    grid-template-columns: 2fr 3fr 160px;
+    grid-template-rows: 45px 40px 1fr;
+    grid-template-areas: 
+        "imgNumero titNumero titNumero"
+        "imgNumero subtitNumero subtitNumero"
+        "imgNumero listaArt btnDescarga";
+    @extend .articulo;
+    overflow: hidden;
+
+    .imagen{
+        grid-area: imgNumero;
+        @include flexbox(row, auto, center);
+        height: 250px;
+        margin: 0px;
+        overflow: hidden;
+
+        img{
+            height: 100%;
+            margin-left: -50px;
+        }
+    }
+
+
+    h3{
+        grid-area: titNumero;
+        font-size: $titulo;
+        word-spacing: 5px;
+    }
+
+    h4{
+        grid-area: subtitNumero;
+        font-size: $cuerpoLg;
+        color: $colorGris7;
+    }
+
+    h5{
+        display: none;
+        color: $colorAzul7;
+    }
+
+    ul{
+        grid-area: listaArt;
+        align-self: start;
+        list-style-type: circle;
+        font-size: $cuerpo;
+        line-height: 24px;
+    }
+
+    .descarga{
+        grid-area:btnDescarga;
+        align-self: end;
+        @include flexbox(row, center, center);
+        width: 120px;
+        margin-bottom: 20px;
+
+        &:hover i{
+            animation: rotacion 0.3s ease-out;
+        }
+
+        @keyframes rotacion{
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    }
+}
+
+
+#suscripcion{
+    grid-area: suscripcion;
+    @extend .articulo;
+    padding: 20px 10px;
+}
+
+
+
+/*---------- FORO ------------*/
+
+#ideas{
+    @include grids (30px, 10px, start, auto);
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 25px auto 40px;
+    grid-template-areas:
+        "titIdeas"
+        "aclaracion"
+        "formulario"
+        "botones";
+    margin-top: 50px;
+    background-image: url(../imagenes/foroCabecera.jpg);
+    background-size: cover;
+    background-position-y: bottom;
+    box-shadow: 0px 0px 10px $colorGris7;
+
+
+    h2{
+        grid-area: titIdeas;
+    }
+    p{
+        grid-area: aclaracion;
+        line-height: 1.5em;
+    }
+
+    .formularioForo{
+        grid-area: formulario;
+    }
+    .btnForo{
+        grid-area: botones;
+        @include flexbox(row, stretch, center);
+
+        input{
+            margin-right: 10px;
+        }
+    }
+}
+
+
+/* POSTEOS */
+#posteo{
+    @include grids(20px, 20px, center, center);
+    grid-template-columns: 1fr 1fr;
+    justify-self: center;
+} 
+
+.foro{
+    @include grids (15px, 15px, center, start);
+    grid-template-columns: 4fr repeat(3, 70px);
+    grid-template-rows: 55px auto 45px;
+    grid-template-areas: 
+        "titForo titForo titForo titForo"
+        "textForo textForo textForo textForo"
+        ". mg com save";
+    @extend .articulo;
+    height: 100%;
+    padding: 10px;
+    font-size: $cuerpoSm;
+
+    h3{
+        grid-area: titForo;
+        align-self: center;
+    }
+    .texto{
+        grid-area: textForo;
+        line-height: 1.6em;
+    }
+
+    .iconos{
+        font-size: $cuerpoLg;
+        cursor: pointer;
+        transition: all 0.15s linear;
+
+        &:hover{
+            transform: scale(1.05);
+            font-weight: bold;
+            text-shadow: 0px 0px 2px $colorGris5;
+        }
+    }
+
+    .meGusta{
+        grid-area: mg;
+    }
+
+    .comentario{
+        grid-area: com;
+    }
+    .guardar{
+        grid-area: save;
+    }
+
+
+}
+
+/* ------ NOTICIAS --------- */
+#noticias{
+    @include flexbox(column, auto, center);
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    .noticias__section{
+        @include grids(20px, 20px, auto, auto);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 30px auto;
+        padding: 20px 30px;
+    }
+
+    .noticias__titulo{
+        grid-column: span 3;
+        font-size: $titulo;
+        text-transform: uppercase;
+    }
+
+    .noticias__titulo--recientes{
+        color: $colorReciente;
+    }
+    .noticias__titulo--destacadas{
+        color: $colorDestacado;
+    }
+}
+
+    .noticias__article{
+        position: relative;
+        @include flexbox(column, space-around, flex-start);
+        @extend .articulo;
+        overflow: hidden;
+        height: 250px;
+        padding: 10px;
+        cursor: pointer;
+
+
+        .noticias__article__titulo{
+            font-size: $subtitulo;
+            line-height: 22px;
+            margin:5px 0px;
+        }
+
+        .noticias__article__titulo--recientes{
+            color: $colorReciente;
+        }
+        .noticias__article__titulo--destacadas{
+            color: $colorDestacado;
+        }
+
+
+        .noticias__article__enlace{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: -100%;
+            left: 0px;
+            font-size: $subtitulo;
+            font-weight: bold;
+            line-height: 180px;
+            text-decoration: none;
+            text-align: center;
+            word-spacing: 2px;
+            transition: all 0.3s ease-out;
+            transition-delay: 0.2s;
+            cursor: pointer;
+            background-color: $colorNegroTransp;
+            color: $colorGris0;
+
+            &:hover{
+                color: $colorAzul2;
+            }
+        }
+
+        &:hover .noticias__article__enlace{
+            transform: translateY(100%);
+        }
+
+    }
+
+
+
+
+
+
+
+/* -----------INFO--------------------------- */
+#info{
+    @include grids(30px, 20px, center, auto);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2fr 3fr;
+    margin-top: 50px;
+}
+
+.nosotros{
+    grid-column: span 3;
+    @include grids(20px, 5px, auto, auto);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px auto;
+    grid-template-areas:
+        "imgNosotros titNosotros titNosotros"
+        "imgNosotros parUno parDos";
+    @extend .articulo;
+    height: 250px;
+    margin-top: 15px;
+    padding-right: 30px;
+
+    .imagen{
+        grid-area: imgNosotros;
+        height: 250px;
+        
+        img{
+            height: 100%;
+        }
+    }
+
+    h2{
+        grid-area: titNosotros;
+        align-self: end;
+    }
+
+    .colUno{
+        grid-area: parUno;
+    }
+
+    .colDos{
+        grid-area: parDos;
+    }
+}
+
+
+
+.propositos{
+    grid-column: 1 / span 3;
+    @include grids(60px, 0px, auto, center);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px auto;
+    
+    h3{
+        grid-column: 1 / span 3;
+        align-self: center;
+        font-size: $subtitulo;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .tarjetas{
+        @include grids(0px, 10px, auto, start);
+        grid-template-rows: 70px auto 30px;
+        @extend .articulo;
+        height: 350px;
+        padding: 0px 10px;
+        border-radius: 15px;
+        text-align: center;
+        
+        p{
+            font-size: $cuerpoLg;
+            line-height: 24px;
+            margin-top: 15px;
+        }
+        img{
+            width: 60px;
+            margin: 15px auto;
+        }
+
+        h5{
+            font-family: $fuenteTitulo;
+            font-size: $cuerpo;
+            letter-spacing: 1px;
+            margin: 0px;
+            color: $colorGris6;
+        }
+    }
+}
+
+/*---------- FOOTER ------------*/
+footer{
+    @include flexbox(column, center, center);
+    height: 140px;
+    margin-top: 20px;
+    background-image: $gradienteNegro;
+    color: $colorGris0;
+    line-height: 2em;
+    text-align: center;
+    
+    p{
+        a{
+            text-decoration: none;
+            transition: all 0.1s linear;
+            &:hover{
+                color: $colorGris5;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    /*--------------------------------------*/
+    $redes:(
+        facebook: #0674e7,
+        twitter: #1da1f2,
+        linkedin: #0a66c2,
+        github: #ff7300
+    );
+
+
+    #redes{
+        display: flex;
+        justify-content: center;
+
+        i{
+            font-size: $titulo;
+            margin: 5px 10px;
+            cursor: pointer;
+            color: $colorGris0;
+            transition: all 0.1s linear;
+            }
+            @each $redSocial, $color in $redes{
+
+            .#{$redSocial}:hover{
+                color: $color;
+                transform: scale(1.25);
+            }
+        }   
+    }
+}
+
+@import 'Enlaces/mediaMD';
+@import 'Enlaces/mediaSM';
+@import 'Enlaces/mediaXS';

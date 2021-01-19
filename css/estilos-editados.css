@@ -1,0 +1,192 @@
+/*------- GENERAL --------*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: #e8ecf0;
+    color: #243b52;
+    margin: 0px;
+    padding: 0px;
+}
+h1{
+    font-family: 'righteous';
+    margin: 0px;
+}
+h2{
+    color:#1a3958;
+    margin: 0px;
+}
+h3{
+    color: #345475;
+    margin: 0px;
+}
+h4{
+    color: #436e99;
+    margin: 0px;
+}
+p{
+    margin: 0px;
+}
+a{
+    color: #5987b6;
+}
+/*-----------------------*/
+
+.container-fluid{
+  width: 100%;
+  /*padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem); */
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+
+/*-----------------------*/
+.navbar-white .navbar-brand {
+  color: #fff;
+}
+.navbar-white .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
+  color: #fff;
+}
+.navbar-white .navbar-nav .nav-link {
+  color: #fff;
+}
+.navbar-white .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  color: #345475;
+}
+.navbar-white .navbar-nav .nav-link.disabled {
+  color: rgba(255, 255, 255, 0.25);
+}
+.navbar-white .navbar-nav .show > .nav-link,
+.navbar-white .navbar-nav .nav-link.active {
+  color: #fff;
+}
+.navbar-white .navbar-toggler {
+  color: rgba(255, 255, 255, 0.55);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.navbar-white .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-white .navbar-text {
+  color: rgba(255, 255, 255, 0.55);
+}
+.navbar-white .navbar-text a,
+.navbar-white .navbar-text a:hover,
+.navbar-white .navbar-text a:focus {
+  color: #fff;
+}
+
+/*-----------------------*/
+.navbar{
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media (min-width: 768px) {
+  .navbar-expand-md {
+    flex-wrap: nowrap;
+  }
+  .navbar-expand-md .navbar-nav {
+    flex-direction: row;
+  }
+  .navbar-expand-md .navbar-nav .dropdown-menu {
+    position: absolute;
+    text-align: right;
+    justify-content: flex-end;
+  }
+  .navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  .navbar-expand-md .navbar-collapse {
+    display: flex !important;
+  }
+  .navbar-expand-md .navbar-toggler {
+    display: none;
+  }
+}
+
+
+/*-----------------------*/
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  transition: box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .navbar-toggler {
+    transition: none;
+  }
+}
+.navbar-toggler:hover {
+  text-decoration: none;
+}
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 0;
+  animation: clickColor 0.5s ease-in-out;
+}
+.navbar-toggler:active{
+  color: white;
+}
+@keyframes clickColor{
+  0%{
+    transform: scale(1);
+    color: white;
+  }
+  50%{
+    transform: scale(1.2);
+    color: #243b52;
+  }
+  100%{
+    transform: scale(1);
+    color: white;
+  }
+}
+
+.modal-body li{
+  list-style-type: circle;
+}
+
+/*-----------------------*/
+.btn-blue {
+  color: #fff;
+  background-color: #345475;
+  border-color: #345475;
+}
+.btn-blue:hover {
+  color: #fff;
+  background-color: #325c86;
+  border-color: #325c86;
+}
+.btn-check:focus + .btn-blue, .btn-blue:focus {
+  color: #fff;
+  background-color: #366696;
+  border-color: #345475;
+  box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
+}
+.btn-check:checked + .btn-blue, .btn-check:active + .btn-blue, .btn-blue:active, .btn-blue.active, .show > .btn-blue.dropdown-toggle {
+  color: #fff;
+  background-color: #0757cf;
+  border-color: #0757cf;
+}
+.btn-check:checked + .btn-blue:focus, .btn-check:active + .btn-blue:focus, .btn-blue:active:focus, .btn-blue.active:focus, .show > .btn-blue.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
+}
+.btn-blue:disabled, .btn-blue.disabled {
+  color: #fff;
+  background-color: #1060d8;
+  border-color: #0757cf;
+}

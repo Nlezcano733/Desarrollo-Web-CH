@@ -1,0 +1,22 @@
+@mixin grids($cGap, $rGap, $justificacion, $alineacion){
+    display: grid;
+    grid-column-gap: $cGap;
+    grid-row-gap: $rGap;
+    justify-content: $justificacion;
+    align-items: $alineacion;
+}
+
+@mixin flexbox($direccion, $justificacion, $alineacion){
+    display: flex;
+    flex-direction: $direccion;
+    justify-content: $justificacion;
+    align-items: $alineacion;
+}
+
+@mixin verNoticia ($opacidad, $tipografia){
+    background-image: $gradiente;
+    background-blend-mode: hard-light;
+     opacity: $opacidad;
+     color: $colorAzul8;
+     font-weight: $tipografia;
+}
