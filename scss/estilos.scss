@@ -162,7 +162,7 @@
         grid-area:btnDescarga;
         align-self: end;
         @include flexbox(row, center, center);
-        width: 130px;
+        width: 150px;
         margin-bottom: 20px;
 
         &:hover i{
