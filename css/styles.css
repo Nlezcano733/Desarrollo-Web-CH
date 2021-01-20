@@ -1001,6 +1001,7 @@ footer #redes .github:hover {
     font-size: 14px;
     justify-self: end;
     width: fit-content;
+    padding: 6px;
     margin-bottom: 0px;
   }
 
