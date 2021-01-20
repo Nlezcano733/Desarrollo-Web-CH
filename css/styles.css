@@ -163,7 +163,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 120px;
+  width: 150px;
   margin-bottom: 20px;
 }
 .revistaNumero .descarga:hover i {
@@ -559,7 +559,6 @@ footer #redes .github:hover {
   .revistaNumero .descarga {
     grid-area: btnDescarga;
     font-size: 14px;
-    width: 105px;
     margin-bottom: 0px;
   }
 
@@ -734,6 +733,7 @@ footer #redes .github:hover {
   }
   .revistaNumero .descarga {
     grid-area: btnDescarga;
+    width: 125px;
   }
 
   /*FORO*/
@@ -1000,7 +1000,7 @@ footer #redes .github:hover {
     align-self: center;
     font-size: 14px;
     justify-self: end;
-    width: 105px;
+    width: 140px;
     margin-bottom: 0px;
   }
 
