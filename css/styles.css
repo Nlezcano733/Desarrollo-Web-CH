@@ -163,7 +163,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 150px;
+  width: 130px;
   margin-bottom: 20px;
 }
 .revistaNumero .descarga:hover i {
@@ -197,7 +197,7 @@
   grid-template-rows: 30px 25px auto 40px;
   grid-template-areas: "titIdeas" "aclaracion" "formulario" "botones";
   margin-top: 50px;
-  background-image: url(../imagenes/foroCabecera.jpg);
+  background-image: url(../Imagenes/foroCabecera.jpg);
   background-size: cover;
   background-position-y: bottom;
   box-shadow: 0px 0px 10px #aaaaaa;
@@ -336,7 +336,7 @@
   left: 0px;
   font-size: 20px;
   font-weight: bold;
-  line-height: 180px;
+  line-height: 250px;
   text-decoration: none;
   text-align: center;
   word-spacing: 2px;
@@ -734,6 +734,7 @@ footer #redes .github:hover {
   .revistaNumero .descarga {
     grid-area: btnDescarga;
     width: 125px;
+    padding: 6px;
   }
 
   /*FORO*/
