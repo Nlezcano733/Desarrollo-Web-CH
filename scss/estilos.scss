@@ -197,12 +197,11 @@
 #ideas{
     @include grids (30px, 10px, start, auto);
     grid-template-columns: 1fr;
-    grid-template-rows: 30px 25px auto 40px;
+    grid-template-rows: 30px 25px auto;
     grid-template-areas:
         "titIdeas"
         "aclaracion"
-        "formulario"
-        "botones";
+        "formulario";
     margin-top: 50px;
     background-image: url(../Imagenes/ImagenForo.jpg);
     background-size: cover;
@@ -222,8 +221,8 @@
         grid-area: formulario;
     }
     .btnForo{
-        grid-area: botones;
         @include flexbox(row, stretch, center);
+        margin-bottom: 20px;
 
         input{
             margin-right: 10px;
@@ -232,7 +231,6 @@
 }
 
 
-/* POSTEOS */
 #posteo{
     @include grids(20px, 20px, center, center);
     grid-template-columns: 1fr 1fr;
@@ -246,7 +244,7 @@
     grid-template-areas: 
         "titForo titForo titForo titForo"
         "textForo textForo textForo textForo"
-        ". mg com save";
+       ". mg com save";
     @extend .articulo;
     height: 100%;
     padding: 10px;
@@ -256,9 +254,18 @@
         grid-area: titForo;
         align-self: center;
     }
-    .texto{
+    .cuerpo{
         grid-area: textForo;
-        line-height: 1.6em;
+        p{
+            margin-bottom: 0.3em;
+            line-height: 1.6em;
+            
+        }
+        &::first-letter{
+            font-weight: 500;
+            font-size: large;
+            letter-spacing: 0.5px;
+        }
     }
 
     .iconos{
@@ -453,7 +460,7 @@
             margin: 15px auto;
         }
 
-        h5{
+        h4{
             font-family: $fuenteTitulo;
             font-size: $cuerpo;
             letter-spacing: 1px;

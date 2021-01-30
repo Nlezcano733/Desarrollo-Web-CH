@@ -143,7 +143,7 @@
     #ideas{
         @include grids(30px, 5px, start, inherit);
         grid-template-columns: 1fr;
-        grid-template-rows: 35px 35px auto 40px;
+        grid-template-rows: 35px 35px auto;
         grid-template-areas:
             "titIdeas"
             "aclaracion"
@@ -162,33 +162,37 @@
             grid-area: aclaracion;
             line-height: 1.2em;
         }
-    }
+        .formularioForo{
+            grid-area: formulario;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 36px auto 40px;
+            grid-template-areas:
+                "encabezado "
+                "cuerpo"
+                "botones";
+            grid-gap: 15px;
+            margin-top: 10px;
+            
+            .encabezado{
+                grid-area: encabezado;
+            }
+            .cuerpo{
+                grid-area: cuerpo;
+                margin-bottom: 0px;
+                padding: 0px;
+            }
+            .btnForo{            
+                margin-bottom: 0px;
 
-    .formularioForo{
-        grid-area: formulario;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 36px 1fr 40px;
-        grid-template-areas:
-            "encabezado "
-            "cuerpo"
-            "botones";
-        grid-gap: 15px;
-        
-        .btnForo{            
-            input{
-                width: 100%;
-                margin-bottom: 15px;
+                input{
+                    width: 100%;
+                }
             }
         }
     }
 
-    .encabezado{
-        grid-area: encabezado;
-    }
-    .cuerpo{
-        grid-area: cuerpo;
-    }
+
 
     /* POSTEOS */
     #posteo{

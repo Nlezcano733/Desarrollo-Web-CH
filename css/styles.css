@@ -194,8 +194,8 @@
   justify-content: start;
   align-items: auto;
   grid-template-columns: 1fr;
-  grid-template-rows: 30px 25px auto 40px;
-  grid-template-areas: "titIdeas" "aclaracion" "formulario" "botones";
+  grid-template-rows: 30px 25px auto;
+  grid-template-areas: "titIdeas" "aclaracion" "formulario";
   margin-top: 50px;
   background-image: url(../Imagenes/ImagenForo.jpg);
   background-size: cover;
@@ -213,17 +213,16 @@
   grid-area: formulario;
 }
 #ideas .btnForo {
-  grid-area: botones;
   display: flex;
   flex-direction: row;
   justify-content: stretch;
   align-items: center;
+  margin-bottom: 20px;
 }
 #ideas .btnForo input {
   margin-right: 10px;
 }
 
-/* POSTEOS */
 #posteo {
   display: grid;
   grid-column-gap: 20px;
@@ -251,9 +250,17 @@
   grid-area: titForo;
   align-self: center;
 }
-.foro .texto {
+.foro .cuerpo {
   grid-area: textForo;
+}
+.foro .cuerpo p {
+  margin-bottom: 0.3em;
   line-height: 1.6em;
+}
+.foro .cuerpo::first-letter {
+  font-weight: 500;
+  font-size: large;
+  letter-spacing: 0.5px;
 }
 .foro .iconos {
   font-size: 18px;
@@ -436,7 +443,7 @@
   width: 60px;
   margin: 15px auto;
 }
-.propositos .tarjetas h5 {
+.propositos .tarjetas h4 {
   font-family: righteous;
   font-size: 16px;
   letter-spacing: 1px;
@@ -777,7 +784,6 @@ footer #redes .github:hover {
     margin-bottom: 15px;
   }
 
-  /* POSTEOS */
   #posteo {
     display: grid;
     grid-template-columns: 1fr;
@@ -884,7 +890,7 @@ footer #redes .github:hover {
   .propositos .tarjetas p {
     text-align: left;
   }
-  .propositos .tarjetas h5 {
+  .propositos .tarjetas h4 {
     display: none;
   }
 }
@@ -1014,7 +1020,7 @@ footer #redes .github:hover {
     justify-content: start;
     align-items: inherit;
     grid-template-columns: 1fr;
-    grid-template-rows: 35px 35px auto 40px;
+    grid-template-rows: 35px 35px auto;
     grid-template-areas: "titIdeas" "aclaracion" "formulario";
     background-color: #d1d1d1c5;
     background-image: url(../imagenes/foroCabecera.jpg);
@@ -1030,26 +1036,28 @@ footer #redes .github:hover {
     grid-area: aclaracion;
     line-height: 1.2em;
   }
-
-  .formularioForo {
+  #ideas .formularioForo {
     grid-area: formulario;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 36px 1fr 40px;
+    grid-template-rows: 36px auto 40px;
     grid-template-areas: "encabezado " "cuerpo" "botones";
     grid-gap: 15px;
+    margin-top: 10px;
   }
-  .formularioForo .btnForo input {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .encabezado {
+  #ideas .formularioForo .encabezado {
     grid-area: encabezado;
   }
-
-  .cuerpo {
+  #ideas .formularioForo .cuerpo {
     grid-area: cuerpo;
+    margin-bottom: 0px;
+    padding: 0px;
+  }
+  #ideas .formularioForo .btnForo {
+    margin-bottom: 0px;
+  }
+  #ideas .formularioForo .btnForo input {
+    width: 100%;
   }
 
   /* POSTEOS */
