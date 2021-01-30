@@ -375,35 +375,31 @@
     }
 
 
-
-
-
-
-
 /* -----------INFO--------------------------- */
 #info{
     @include grids(30px, 20px, center, auto);
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 2fr 3fr;
+    grid-template-rows: auto 3fr;
     margin-top: 50px;
 }
 
 .nosotros{
     grid-column: span 3;
     @include grids(20px, 5px, auto, auto);
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 300px repeat(2, 2fr);
     grid-template-rows: 50px auto;
     grid-template-areas:
         "imgNosotros titNosotros titNosotros"
         "imgNosotros parUno parDos";
     @extend .articulo;
-    height: 250px;
+    height: 270x;
     margin-top: 15px;
     padding-right: 30px;
 
     .imagen{
         grid-area: imgNosotros;
-        height: 250px;
+        overflow: hidden;
+        height: 270px;
         
         img{
             height: 100%;

@@ -250,12 +250,12 @@
 
     /* INFO */
     #info{
-        grid-template-rows: 360px 1fr;
+        grid-template-rows: auto 1fr;
     }
     .nosotros{
         @include grids(15px, 5px, inherit, inherit);
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 2fr 30px 3fr;
+        grid-template-rows: 100px 30px 3fr;
         grid-template-areas:
             "imgNosotros imgNosotros"
             "titNosotros titNosotros"

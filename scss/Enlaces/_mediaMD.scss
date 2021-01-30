@@ -137,7 +137,7 @@
     /* INFO */
     #info{
         @include grids(inherit, 30px, center, inherit);
-        grid-template-rows: 280px 2Fr;
+        grid-template-rows: auto 2Fr;
     }
     .nosotros{
         display: grid;
