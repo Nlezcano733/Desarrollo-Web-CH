@@ -1,4 +1,4 @@
 # Desarrollo-Web-CH
 Repositorio de desafios para curso de CoderHouse
 
-Prueba de desafio entregable
+Entrega final de curso de desarrollo web 
